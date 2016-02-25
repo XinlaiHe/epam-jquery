@@ -44,9 +44,59 @@ $("#form2 button").click(function() {
 });
 
 // handle the mouseover event here
-
+$("#mouse").mouseover(function(){
+  $("#mouse img").css("width","30%");
+});
 // handle the form events here
 
 $("#formEvents form").submit(function(event) {
+  event.preventDefault();
+  console.log($("#formEvents form input[type=email]").val());
+  console.log($("#formEvents form input[type=password]").val());
+  console.log($("#formEvents form input[type=checkbox]").prop("checked"));
+});
 
+//handle animation
+$("#animate1").mouseover(function(){
+  $("#animate1 img").animate(
+    {
+      width : "400px"
+    }
+  );
+});
+//handle animation
+$("#animate2").dblclick(function(){
+   var dis = $("#animate2").width()-$("#animate2 img").width();
+  if($("#animate2 img").css("margin-left") == "0px"){
+
+    $("#animate2 img").animate(
+      {
+        "margin-left" : "+="+dis
+      },
+       "slow"
+    );
+  }else{
+
+    $("#animate2 img").animate(
+      {
+        "margin-left" : "0"
+      },
+       "slow"
+    );
+  }
+});
+//handle animation
+$("#animate3").click(function(){
+  $("#animate3 img").animate(
+    {
+      opacity : 0
+
+    },
+     "slow", "linear", function(){
+          $("#animate3 img").attr("src","images/cat.png")
+         $("#animate3 img").animate({
+            opacity : 1
+       }, "slow");
+     }
+  );
 });
