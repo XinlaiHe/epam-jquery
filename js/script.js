@@ -60,7 +60,14 @@ $("#formEvents form").submit(function(event) {
 $("#animate1").mouseover(function(){
   $("#animate1 img").animate(
     {
-      width : "400px"
+      width : "40%"
+    }
+  );
+});
+$("#animate1").mouseout(function(){
+  $("#animate1 img").animate(
+    {
+      width : "20%"
     }
   );
 });
